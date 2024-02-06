@@ -22,7 +22,6 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Code Assist',
       theme: theme,
-      darkTheme: darkTheme,
       themeMode: ThemeMode.light,
       routerConfig: appRouter,
     );

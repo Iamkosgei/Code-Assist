@@ -20,10 +20,7 @@ class CachedResults extends StatelessWidget {
             context.read<GetCachedResultsCubit>().fetchCachedResults();
             return Future.value();
           },
-          child: ListView.separated(
-            separatorBuilder: (context, index) => const SizedBox(
-              height: 16,
-            ),
+          child: ListView.builder(
             itemCount: results.length,
             itemBuilder: (context, index) {
               final result = results[index];

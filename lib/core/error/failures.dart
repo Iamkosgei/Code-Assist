@@ -6,4 +6,5 @@ part 'failures.freezed.dart';
 class Failure with _$Failure {
   const factory Failure.serverFailure(int code) = ServerFailure;
   const factory Failure.cacheFailure() = CacheFailure;
+  const factory Failure.invalidFormatFailure() = InvalidFormatFailure;
 }

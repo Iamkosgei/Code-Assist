@@ -56,6 +56,21 @@ class _PromptPageViewState extends State<PromptPageView> {
                       .then((value) {
                     context.read<GetCachedResultsCubit>().fetchCachedResults();
                   });
+                } else if (state is GetPromptResultErrorState) {
+                  final error = state.l.maybeWhen(
+                    serverFailure: (e) => "Server error",
+                    invalidFormatFailure: () =>
+                        "Invalid format please try again",
+                    orElse: () => "Something went wrong",
+                  );
+
+                  final snackBar = SnackBar(
+                    content: Text(error),
+                    behavior: SnackBarBehavior.floating,
+                    backgroundColor: Colors.red,
+                  );
+
+                  ScaffoldMessenger.of(context).showSnackBar(snackBar);
                 }
               },
               builder: (context, state) {

@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 final theme = ThemeData(
-  snackBarTheme: const SnackBarThemeData(backgroundColor: Colors.deepPurple),
+  snackBarTheme: const SnackBarThemeData(
+      backgroundColor: Colors.deepPurple, showCloseIcon: false),
   textTheme: GoogleFonts.lexendDecaTextTheme(),
   useMaterial3: true,
   inputDecorationTheme: InputDecorationTheme(

@@ -20,18 +20,21 @@ mixin _$Failure {
   TResult when<TResult extends Object?>({
     required TResult Function(int code) serverFailure,
     required TResult Function() cacheFailure,
+    required TResult Function() invalidFormatFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int code)? serverFailure,
     TResult? Function()? cacheFailure,
+    TResult? Function()? invalidFormatFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int code)? serverFailure,
     TResult Function()? cacheFailure,
+    TResult Function()? invalidFormatFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +42,21 @@ mixin _$Failure {
   TResult map<TResult extends Object?>({
     required TResult Function(ServerFailure value) serverFailure,
     required TResult Function(CacheFailure value) cacheFailure,
+    required TResult Function(InvalidFormatFailure value) invalidFormatFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ServerFailure value)? serverFailure,
     TResult? Function(CacheFailure value)? cacheFailure,
+    TResult? Function(InvalidFormatFailure value)? invalidFormatFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ServerFailure value)? serverFailure,
     TResult Function(CacheFailure value)? cacheFailure,
+    TResult Function(InvalidFormatFailure value)? invalidFormatFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -139,6 +145,7 @@ class _$ServerFailureImpl implements ServerFailure {
   TResult when<TResult extends Object?>({
     required TResult Function(int code) serverFailure,
     required TResult Function() cacheFailure,
+    required TResult Function() invalidFormatFailure,
   }) {
     return serverFailure(code);
   }
@@ -148,6 +155,7 @@ class _$ServerFailureImpl implements ServerFailure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int code)? serverFailure,
     TResult? Function()? cacheFailure,
+    TResult? Function()? invalidFormatFailure,
   }) {
     return serverFailure?.call(code);
   }
@@ -157,6 +165,7 @@ class _$ServerFailureImpl implements ServerFailure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int code)? serverFailure,
     TResult Function()? cacheFailure,
+    TResult Function()? invalidFormatFailure,
     required TResult orElse(),
   }) {
     if (serverFailure != null) {
@@ -170,6 +179,7 @@ class _$ServerFailureImpl implements ServerFailure {
   TResult map<TResult extends Object?>({
     required TResult Function(ServerFailure value) serverFailure,
     required TResult Function(CacheFailure value) cacheFailure,
+    required TResult Function(InvalidFormatFailure value) invalidFormatFailure,
   }) {
     return serverFailure(this);
   }
@@ -179,6 +189,7 @@ class _$ServerFailureImpl implements ServerFailure {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ServerFailure value)? serverFailure,
     TResult? Function(CacheFailure value)? cacheFailure,
+    TResult? Function(InvalidFormatFailure value)? invalidFormatFailure,
   }) {
     return serverFailure?.call(this);
   }
@@ -188,6 +199,7 @@ class _$ServerFailureImpl implements ServerFailure {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ServerFailure value)? serverFailure,
     TResult Function(CacheFailure value)? cacheFailure,
+    TResult Function(InvalidFormatFailure value)? invalidFormatFailure,
     required TResult orElse(),
   }) {
     if (serverFailure != null) {
@@ -246,6 +258,7 @@ class _$CacheFailureImpl implements CacheFailure {
   TResult when<TResult extends Object?>({
     required TResult Function(int code) serverFailure,
     required TResult Function() cacheFailure,
+    required TResult Function() invalidFormatFailure,
   }) {
     return cacheFailure();
   }
@@ -255,6 +268,7 @@ class _$CacheFailureImpl implements CacheFailure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int code)? serverFailure,
     TResult? Function()? cacheFailure,
+    TResult? Function()? invalidFormatFailure,
   }) {
     return cacheFailure?.call();
   }
@@ -264,6 +278,7 @@ class _$CacheFailureImpl implements CacheFailure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int code)? serverFailure,
     TResult Function()? cacheFailure,
+    TResult Function()? invalidFormatFailure,
     required TResult orElse(),
   }) {
     if (cacheFailure != null) {
@@ -277,6 +292,7 @@ class _$CacheFailureImpl implements CacheFailure {
   TResult map<TResult extends Object?>({
     required TResult Function(ServerFailure value) serverFailure,
     required TResult Function(CacheFailure value) cacheFailure,
+    required TResult Function(InvalidFormatFailure value) invalidFormatFailure,
   }) {
     return cacheFailure(this);
   }
@@ -286,6 +302,7 @@ class _$CacheFailureImpl implements CacheFailure {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ServerFailure value)? serverFailure,
     TResult? Function(CacheFailure value)? cacheFailure,
+    TResult? Function(InvalidFormatFailure value)? invalidFormatFailure,
   }) {
     return cacheFailure?.call(this);
   }
@@ -295,6 +312,7 @@ class _$CacheFailureImpl implements CacheFailure {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ServerFailure value)? serverFailure,
     TResult Function(CacheFailure value)? cacheFailure,
+    TResult Function(InvalidFormatFailure value)? invalidFormatFailure,
     required TResult orElse(),
   }) {
     if (cacheFailure != null) {
@@ -306,4 +324,113 @@ class _$CacheFailureImpl implements CacheFailure {
 
 abstract class CacheFailure implements Failure {
   const factory CacheFailure() = _$CacheFailureImpl;
+}
+
+/// @nodoc
+abstract class _$$InvalidFormatFailureImplCopyWith<$Res> {
+  factory _$$InvalidFormatFailureImplCopyWith(_$InvalidFormatFailureImpl value,
+          $Res Function(_$InvalidFormatFailureImpl) then) =
+      __$$InvalidFormatFailureImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$InvalidFormatFailureImplCopyWithImpl<$Res>
+    extends _$FailureCopyWithImpl<$Res, _$InvalidFormatFailureImpl>
+    implements _$$InvalidFormatFailureImplCopyWith<$Res> {
+  __$$InvalidFormatFailureImplCopyWithImpl(_$InvalidFormatFailureImpl _value,
+      $Res Function(_$InvalidFormatFailureImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$InvalidFormatFailureImpl implements InvalidFormatFailure {
+  const _$InvalidFormatFailureImpl();
+
+  @override
+  String toString() {
+    return 'Failure.invalidFormatFailure()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$InvalidFormatFailureImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(int code) serverFailure,
+    required TResult Function() cacheFailure,
+    required TResult Function() invalidFormatFailure,
+  }) {
+    return invalidFormatFailure();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(int code)? serverFailure,
+    TResult? Function()? cacheFailure,
+    TResult? Function()? invalidFormatFailure,
+  }) {
+    return invalidFormatFailure?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int code)? serverFailure,
+    TResult Function()? cacheFailure,
+    TResult Function()? invalidFormatFailure,
+    required TResult orElse(),
+  }) {
+    if (invalidFormatFailure != null) {
+      return invalidFormatFailure();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ServerFailure value) serverFailure,
+    required TResult Function(CacheFailure value) cacheFailure,
+    required TResult Function(InvalidFormatFailure value) invalidFormatFailure,
+  }) {
+    return invalidFormatFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ServerFailure value)? serverFailure,
+    TResult? Function(CacheFailure value)? cacheFailure,
+    TResult? Function(InvalidFormatFailure value)? invalidFormatFailure,
+  }) {
+    return invalidFormatFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ServerFailure value)? serverFailure,
+    TResult Function(CacheFailure value)? cacheFailure,
+    TResult Function(InvalidFormatFailure value)? invalidFormatFailure,
+    required TResult orElse(),
+  }) {
+    if (invalidFormatFailure != null) {
+      return invalidFormatFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InvalidFormatFailure implements Failure {
+  const factory InvalidFormatFailure() = _$InvalidFormatFailureImpl;
 }

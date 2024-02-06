@@ -33,8 +33,7 @@ class PromptRepository extends IPromptRepository {
       final message = result.choices?.firstOrNull?.message;
 
       if (message == null || message.content == null) {
-        //TODO fix this
-        return left(const ServerFailure(400));
+        return left(const InvalidFormatFailure());
       }
 
       final content = message.content;
@@ -42,7 +41,7 @@ class PromptRepository extends IPromptRepository {
       content?.replaceAll("\\", "");
 
       if (content == null) {
-        return left(const ServerFailure(400));
+        return left(const InvalidFormatFailure());
       }
 
       var encodedContent = json.decode(content);
@@ -51,7 +50,6 @@ class PromptRepository extends IPromptRepository {
     } on ServerException catch (e) {
       return left(ServerFailure(e.code));
     } catch (e) {
-      //TODO better error handling
       return left(const ServerFailure(400));
     }
   }

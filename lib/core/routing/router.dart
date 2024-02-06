@@ -17,10 +17,24 @@ GoRouter router() {
       ),
       GoRoute(
         path: resultsPage,
-        builder: (context, state) {
+        pageBuilder: (context, state) {
           final result = state.extra as Result;
-          return ResultsPage(
-            result: result,
+
+          return CustomTransitionPage(
+            key: state.pageKey,
+            child: ResultsPage(
+              result: result,
+            ),
+            transitionsBuilder:
+                (context, animation, secondaryAnimation, child) {
+              return ScaleTransition(
+                scale: Tween<double>(
+                  begin: 0,
+                  end: 1,
+                ).animate(animation),
+                child: child,
+              );
+            },
           );
         },
       ),

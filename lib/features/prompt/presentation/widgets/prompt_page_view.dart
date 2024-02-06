@@ -113,6 +113,8 @@ class _PromptPageViewState extends State<PromptPageView> {
                               if (formKey.currentState?.validate() ?? false) {
                                 formKey.currentState?.save();
 
+                                FocusScope.of(context).unfocus();
+
                                 final message =
                                     buildAPrompt(language, question);
                                 context

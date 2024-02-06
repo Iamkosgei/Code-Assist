@@ -13,6 +13,7 @@ class CachedResults extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Saved challenges'),
+        centerTitle: false,
       ),
       body: SafeArea(
         child: RefreshIndicator(

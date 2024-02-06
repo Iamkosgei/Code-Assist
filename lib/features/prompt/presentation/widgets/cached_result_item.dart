@@ -2,6 +2,7 @@ import 'package:code_assist/core/routing/routes.dart';
 import 'package:code_assist/features/prompt/domain/entities/result.dart';
 import 'package:code_assist/features/prompt/presentation/blocs/get_cached_results_cubit/get_cached_results_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:code_assist/core/network/utils.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
@@ -40,7 +41,7 @@ class CachedResultItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              result.question ?? '',
+              result.question?.removeEmptyLines() ?? '',
               style: Theme.of(context).textTheme.bodyMedium,
               maxLines: 6,
               overflow: TextOverflow.ellipsis,

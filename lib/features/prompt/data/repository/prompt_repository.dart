@@ -45,10 +45,18 @@ class PromptRepository extends IPromptRepository {
       }
 
       var encodedContent = json.decode(content);
+      var res = ResultModel.fromJson(encodedContent).toDomain();
 
-      return right(ResultModel.fromJson(encodedContent).toDomain());
+      res = res.copyWith(
+          steps: res.steps
+              ?.where((element) => element.trim().isNotEmpty)
+              .toList());
+
+      return right(res);
     } on ServerException catch (e) {
       return left(ServerFailure(e.code));
+    } on FormatException catch (_) {
+      return left(const InvalidFormatFailure());
     } catch (e) {
       return left(const ServerFailure(400));
     }

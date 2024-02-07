@@ -24,8 +24,13 @@ class PromptPage extends StatelessWidget {
       child: BlocBuilder<GetCachedResultsCubit, GetCachedResultsState>(
         builder: (context, state) {
           return state.maybeWhen(
-            loading: () => const Center(
-              child: CircularProgressIndicator(),
+            loading: () => Container(
+              height: double.infinity,
+              width: double.infinity,
+              color: Colors.white,
+              child: const Center(
+                child: CircularProgressIndicator(),
+              ),
             ),
             loaded: (results, showNewChallenge) {
               if (showNewChallenge ?? true) {

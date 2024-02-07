@@ -49,6 +49,7 @@ dependencies:
   confetti: ^0.7.0
 
   flutter_svg: ^2.0.9
+  flutter_launcher_icons: ^0.13.1
 
 
 dev_dependencies:
@@ -67,11 +68,32 @@ dev_dependencies:
 
   floor_generator: ^1.4.2
 
+
+flutter_launcher_icons:
+  android: false
+  ios: true
+  image_path: "assets/icon.jpg"
+  min_sdk_android: 21 
+  web:
+    generate: false
+    image_path: "path/to/image.png"
+    background_color: "#hexcode"
+    theme_color: "#hexcode"
+  windows:
+    generate: false
+    image_path: "path/to/image.png"
+    icon_size: 48 # min:48, max:256, default: 48
+  macos:
+    generate: false
+    image_path: "path/to/image.png"
+
+
 flutter:
 
 
   uses-material-design: true
 
   assets:
-  - assets/svgs/bg.svg
+  - assets/svgs/
+  - assets/
 

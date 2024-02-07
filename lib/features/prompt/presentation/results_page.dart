@@ -24,7 +24,6 @@ class ResultsPage extends StatelessWidget {
                 state.isSaved ? "Solution saved" : "Solution deleted";
             final snackBar = SnackBar(
               content: Text(message),
-              showCloseIcon: true,
               behavior: SnackBarBehavior.floating,
             );
 

@@ -58,9 +58,9 @@ class _PromptPageViewState extends State<PromptPageView> {
                   });
                 } else if (state is GetPromptResultErrorState) {
                   final error = state.l.maybeWhen(
-                    serverFailure: (e) => "Server error",
+                    serverFailure: (e) => "Server error.",
                     invalidFormatFailure: () =>
-                        "Invalid format please try again",
+                        "Invalid format, please try again.",
                     orElse: () => "Something went wrong",
                   );
 
@@ -82,6 +82,7 @@ class _PromptPageViewState extends State<PromptPageView> {
                       height: 4,
                     ),
                     DropdownButtonFormField(
+                      dropdownColor: Colors.white,
                       value: language,
                       items: ["Dart", "Java", "Python", "Javascript"]
                           .map<DropdownMenuItem<String>>((String value) {
@@ -94,6 +95,9 @@ class _PromptPageViewState extends State<PromptPageView> {
                         if (val == null) return;
                         language = val;
                       },
+                      style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                            color: Colors.black,
+                          ),
                     ),
                     const SizedBox(
                       height: 16,
@@ -141,7 +145,13 @@ class _PromptPageViewState extends State<PromptPageView> {
                           ? const Center(
                               child: CircularProgressIndicator(),
                             )
-                          : const Text('Submit'),
+                          : Text(
+                              'Submit',
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyMedium
+                                  ?.copyWith(color: Colors.black),
+                            ),
                     )
                   ],
                 );

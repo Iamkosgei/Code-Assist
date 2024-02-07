@@ -1,10 +1,12 @@
+import 'package:code_assist/core/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 final theme = ThemeData(
   snackBarTheme: const SnackBarThemeData(
-      backgroundColor: Colors.deepPurple, showCloseIcon: false),
-  textTheme: GoogleFonts.lexendDecaTextTheme(),
+    actionTextColor: Colors.white,
+  ),
+  textTheme: lightTextTheme,
   useMaterial3: true,
   inputDecorationTheme: InputDecorationTheme(
     filled: true,
@@ -36,14 +38,15 @@ final theme = ThemeData(
       backgroundColor: MaterialStateProperty.resolveWith<Color?>(
           (Set<MaterialState> states) {
         if (states.contains(MaterialState.disabled)) {
-          return Colors.deepPurple.withOpacity(.2);
+          return primaryColor.withOpacity(.8);
         }
-        return Colors.deepPurple;
+        return primaryColor;
       }),
       foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
       textStyle: MaterialStateProperty.all<TextStyle>(
         const TextStyle(
           fontSize: 14,
+          color: Colors.black,
         ),
       ),
       enableFeedback: true,
@@ -60,18 +63,19 @@ final theme = ThemeData(
       ),
     ),
   ),
-  colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple).copyWith(
-    background: Colors.white,
+  colorScheme: ColorScheme.fromSeed(seedColor: primaryColor).copyWith(
+    background: backgroundColor,
   ),
   iconTheme: const IconThemeData(
-    color: Colors.white,
+    color: primaryColor,
   ),
   appBarTheme: AppBarTheme(
-    backgroundColor: Colors.white,
-    foregroundColor: Colors.black,
-    surfaceTintColor: Colors.white,
+    backgroundColor: backgroundColor,
+    foregroundColor: primaryColor,
+    surfaceTintColor: backgroundColor,
     titleTextStyle: lightTextTheme.titleMedium,
     centerTitle: false,
+    actionsIconTheme: const IconThemeData(color: primaryColor),
   ),
 );
 
@@ -79,16 +83,16 @@ final lightTextTheme = GoogleFonts.lexendDecaTextTheme().copyWith(
   bodyMedium: const TextStyle(
     fontSize: 14,
     fontWeight: FontWeight.w400,
-    color: Colors.black,
+    color: Colors.white,
   ),
   titleSmall: const TextStyle(
     fontSize: 18,
     fontWeight: FontWeight.w400,
-    color: Colors.black,
+    color: Colors.white,
   ),
   titleMedium: const TextStyle(
     fontSize: 22,
     fontWeight: FontWeight.w500,
-    color: Colors.black,
+    color: Colors.white,
   ),
 );

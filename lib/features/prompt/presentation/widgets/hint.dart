@@ -1,3 +1,4 @@
+import 'package:code_assist/core/theme/colors.dart';
 import 'package:flutter/material.dart';
 
 class Hint extends StatelessWidget {
@@ -9,7 +10,7 @@ class Hint extends StatelessWidget {
     return Container(
         padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(
-          color: Theme.of(context).colorScheme.background,
+          color: containerBG,
           borderRadius: const BorderRadius.all(
             Radius.circular(16),
           ),
@@ -34,6 +35,9 @@ class Hint extends StatelessWidget {
                       0xFF6E6A7C,
                     ),
                   ),
+            ),
+            const SizedBox(
+              height: 4,
             ),
             Text(
               hint,

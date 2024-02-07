@@ -1,3 +1,4 @@
+import 'package:code_assist/core/theme/colors.dart';
 import 'package:flutter/material.dart';
 
 class Question extends StatelessWidget {
@@ -13,7 +14,7 @@ class Question extends StatelessWidget {
         width: double.infinity,
         padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(
-          color: Theme.of(context).colorScheme.background,
+          color: containerBG,
           borderRadius: const BorderRadius.all(
             Radius.circular(16),
           ),
@@ -39,9 +40,18 @@ class Question extends StatelessWidget {
                     ),
                   ),
             ),
-            Text(
-              question,
-              style: Theme.of(context).textTheme.bodyMedium,
+            const SizedBox(
+              height: 4,
+            ),
+            Hero(
+              tag: question,
+              child: Material(
+                type: MaterialType.transparency,
+                child: Text(
+                  question,
+                  style: Theme.of(context).textTheme.bodyMedium,
+                ),
+              ),
             )
           ],
         ));

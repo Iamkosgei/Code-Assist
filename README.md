@@ -27,6 +27,8 @@
 
 <p></p>
 
-<img  src="https://github.com/Iamkosgei/Code-Assist/assets/14147462/e4563eef-a955-488f-81eb-95da5da1f78e"  height= "400" />
+<img  src="https://github.com/Iamkosgei/Code-Assist/assets/14147462/d80b9ae6-5c0e-4b47-bca5-1292acc2f36a"  height= "400" />
+<img  src="https://github.com/Iamkosgei/Code-Assist/assets/14147462/04081d7b-7983-45c3-8122-a34ee43e4f33"  height= "400" />
+<img  src="https://github.com/Iamkosgei/Code-Assist/assets/14147462/e2c82752-4ee0-4c2a-aacf-11e42624d29a"  height= "400" />
 
 <br>

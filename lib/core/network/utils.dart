@@ -1,4 +1,4 @@
-const accessToken = "";
+const accessToken = "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";
 
 extension RemoveEmptyLines on String {
   String? removeEmptyLines() {

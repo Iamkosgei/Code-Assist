@@ -50,6 +50,7 @@ dependencies:
 
   flutter_svg: ^2.0.9
   flutter_launcher_icons: ^0.13.1
+  sqflite: ^2.3.2
 
 
 dev_dependencies:

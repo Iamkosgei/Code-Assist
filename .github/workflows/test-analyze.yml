@@ -38,7 +38,5 @@ jobs:
           architecture: ${{ env.FLUTTER_ARCH }}
       - name: Install dependencies
         run: flutter pub get
-      - name: Generate code
-        run: flutter pub run build_runner build
       - name: Run tests
         run: flutter test

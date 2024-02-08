@@ -84,3 +84,11 @@ jobs:
         with:
           name: apk
           path: build/app/outputs/flutter-apk/
+        
+      - name: Create Github Release
+        uses: softprops/action-gh-release@v1
+        with:
+           generate_release_notes: true
+           prerelease: true
+           files: |
+             app/build/outputs/apk/release/app-release.apk

@@ -148,19 +148,16 @@ class _StepsState extends State<Steps> {
                     alignment: Alignment.bottomCenter,
                     child: ConfettiWidget(
                       confettiController: _controllerBottomCenter,
-                      blastDirectionality: BlastDirectionality
-                          .explosive, // don't specify a direction, blast randomly
-                      shouldLoop:
-                          false, // start again as soon as the animation is finished
+                      blastDirectionality: BlastDirectionality.explosive,
+                      shouldLoop: false,
                       colors: const [
                         Colors.green,
                         Colors.blue,
                         Colors.pink,
                         Colors.orange,
                         Colors.purple
-                      ], // manually specify the colors to be used
-                      createParticlePath:
-                          drawStar, // define a custom shape/path.
+                      ],
+                      createParticlePath: drawStar,
                     ),
                   ),
                 ],

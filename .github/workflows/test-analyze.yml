@@ -1,6 +1,9 @@
 name: test-analyze
 
-on: [push]
+on:
+  push:
+    branches:
+      - main # Adjust branch name if needed
 
 env:
   FLUTTER_CHANNEL: 'stable'
@@ -49,8 +52,8 @@ jobs:
       - name: Run tests
         run: flutter test
 
-  flutter_test:
-    name: Run build apk
+  build_apk:
+    name: Build APK
     runs-on: ubuntu-latest
     needs: tests
     steps:
@@ -74,21 +77,31 @@ jobs:
       - name: Decode base64 key into a file
         run: echo "${{ secrets.KEYSTORE }}" | base64 --decode > android/app/key.jks
       
-      - name: Build apk
+      - name: Build APK
         run: | 
           flutter pub get
           flutter build apk --dart-define=ACCESS_TOKEN=${{ secrets.CHAT_GPT_ACCESS_TOKEN }} 
       
-      - name: Upload artifact
+      - name: Upload APK artifact
         uses: actions/upload-artifact@v2
         with:
           name: apk
           path: build/app/outputs/flutter-apk/
-        
-      - name: Create Github Release
+
+  create_github_release:
+    name: Create GitHub Release
+    runs-on: ubuntu-latest
+    needs: build_apk
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
         with:
-           generate_release_notes: true
-           prerelease: true
-           files: |
-             build/app/outputs/flutter-apk/app-release.apk
+          generate_release_notes: true
+          prerelease: true
+          files: |
+            build/app/outputs/flutter-apk/app-release.apk

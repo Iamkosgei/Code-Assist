@@ -66,10 +66,10 @@ jobs:
       
       - name: Create key.properties file
         run: |
-          echo "storePassword=${{ secrets.STOREPASSWORD }}" > ${{ env.STOREPASSWORD}}
-          echo "keyPassword=${{ secrets.KEYPASSWORD }}" >> ${{ env.KEYPASSWORD}}
-          echo "keyAlias=${{ secrets.KEYALIAS }}" >> ${{ env.KEYALIAS}}
-          echo "storeFile=${{ secrets.STOREFILE }}" >> ${{ env.STOREFILE}}
+          echo "storePassword=${{ secrets.STOREPASSWORD }}" >> android/key.properties
+          echo "keyPassword=${{ secrets.KEYPASSWORD }}" >> android/key.properties
+          echo "keyAlias=${{ secrets.KEYALIAS }}" >> android/key.properties
+          echo "storeFile=${{ secrets.STOREFILE }}" >> android/key.properties
       
       - name: Decode base64 key into a file
         run: echo "${{ secrets.KEYSTORE }}" | base64 --decode > android/app/key.jks
@@ -77,7 +77,7 @@ jobs:
       - name: Build apk
         run: | 
           flutter pub get
-          flutter build apk --dart-define=TMDB_KEY=${{ secrets.CHAT_GPT_ACCESS_TOKEN }} 
+          flutter build apk --dart-define=ACCESS_TOKEN=${{ secrets.CHAT_GPT_ACCESS_TOKEN }} 
       
       - name: Upload artifact
         uses: actions/upload-artifact@v2

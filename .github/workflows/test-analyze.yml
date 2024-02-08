@@ -91,4 +91,4 @@ jobs:
            generate_release_notes: true
            prerelease: true
            files: |
-             app/build/outputs/apk/release/app-release.apk
+             build/app/outputs/flutter-apk/app-release.apk

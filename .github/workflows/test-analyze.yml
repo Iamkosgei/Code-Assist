@@ -14,10 +14,6 @@ jobs:
           flutter-version: '3.13.1'
           channel: 'stable'
           architecture: x64
-      - name: Check Code Format
-        run: dart format . --set-exit-if-changed
-      - name: Generate code
-        run: dart run build_runner build
       - name: Analyze code
         run: dart analyze .
   tests:

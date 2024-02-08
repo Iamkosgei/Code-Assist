@@ -3,7 +3,7 @@ import 'package:code_assist/core/theme/colors.dart';
 import 'package:code_assist/features/prompt/domain/entities/result.dart';
 import 'package:code_assist/features/prompt/presentation/blocs/get_cached_results_cubit/get_cached_results_cubit.dart';
 import 'package:flutter/material.dart';
-import 'package:code_assist/core/network/utils.dart';
+import 'package:code_assist/core/utils.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 

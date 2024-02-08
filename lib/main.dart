@@ -5,7 +5,10 @@ import 'package:code_assist/core/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import 'core/utils.dart';
+
 void main() {
+  setNavigationBarColor();
   configureDependencies();
   setUpLoging();
   runApp(const MyApp());

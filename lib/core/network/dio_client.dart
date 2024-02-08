@@ -1,4 +1,4 @@
-import 'package:code_assist/core/network/utils.dart';
+import 'package:code_assist/core/utils.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';

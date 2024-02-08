@@ -1,0 +1,38 @@
+name: test-analyze
+
+on: [push]
+
+jobs:
+  analysis:
+    name: format
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.13.1'
+          channel: 'stable'
+          architecture: x64
+      - name: Check Code Format
+        run: dart format . --set-exit-if-changed
+      - name: Generate code
+        run: dart run build_runner build
+      - name: Analyze code
+        run: dart analyze .
+  tests:
+    name: tests
+    runs-on: ubuntu-latest
+    needs: analysis
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.13.1'
+          channel: 'stable'
+          architecture: x64
+      - name: Generate code
+        run: dart run build_runner build
+      - name: Run tests
+        run: flutter test

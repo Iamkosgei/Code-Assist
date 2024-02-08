@@ -1,5 +1,3 @@
-name: test-analyze
-
 on:
   push:
     branches:

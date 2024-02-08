@@ -1,8 +1,10 @@
 on:
   push:
     branches:
-      - main # Adjust branch name if needed
-
+      - main
+    tags:
+      - '*'
+      
 env:
   FLUTTER_CHANNEL: 'stable'
   FLUTTER_ARCH: 'x64'

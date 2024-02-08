@@ -21,6 +21,7 @@
 - Flutter: Frontend development for the mobile app.
 - ChatGPT API: Providing intelligent responses and guidance.
 - SQLite: For offline caching and storage of saved solutions.
+- Github Actions : For running tests.
 
 ## Screenshots:
 
@@ -36,4 +37,10 @@
 
 ```bash
 flutter run --release --dart-define ACCESS_TOKEN={Your ChatGpt}
+```
+
+## How to run tests:
+
+```bash
+flutter test
 ```

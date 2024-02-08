@@ -31,3 +31,9 @@
 <img  src="https://github.com/Iamkosgei/Code-Assist/assets/14147462/e2c82752-4ee0-4c2a-aacf-11e42624d29a"  height= "400" />
 
 <br>
+
+## How to run:
+
+```bash
+flutter run --release --dart-define ACCESS_TOKEN={Your ChatGpt}
+```
